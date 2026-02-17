@@ -384,3 +384,10 @@
     color: #747474;
     font-weight: 500;
 }
+.empty-box {
+  display: none;
+}
+
+.service-cart.empty-active .empty-box {
+  display: flex;
+}

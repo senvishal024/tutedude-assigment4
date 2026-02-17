@@ -23,13 +23,7 @@ function updateSerialNumbers() {
 //null value hone pr box design
 function nullBoxValue(){
     if(Object.keys(cart).length === 0){
-      serviceCart.innerHTML=`
-      <div class="empty-box">
-        <ion-icon name="alert-circle-outline"></ion-icon>
-      </div>
-      `
       serviceCart.classList.add("empty-active");
-    
   }
   else{
     serviceCart.classList.remove("empty-active");
@@ -96,7 +90,10 @@ buttons.forEach((btn) => {
     // ADD ITEM
     else {
       cart[serviceName] = price;
-      serviceCart.innerHTML=" ";
+      if(Object.keys(cart).length===0){
+         serviceCart.classList.remove("empty-active")
+      }
+     
       // create row
       let row = document.createElement("div");
       row.classList.add("right-box-top-details");
