@@ -132,6 +132,8 @@
     padding: 2rem;
     background-color: #fff;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .left-box-header p{
     color: #747474;
@@ -184,6 +186,13 @@
 .rupee-num{
     color: rgb(43, 149, 255);
 }
+.left-box-footer{
+    display: flex;
+    color: rgb(43, 149, 255);
+    gap: 1rem; 
+    align-items:center;
+    margin-top: auto;
+}
 .right-box{
     flex-basis: 40%;
     display: flex;
@@ -234,7 +243,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.empty-box-hidden{
+    display: none;
+}
+.empty-box {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-size: 100px;
+}
+.empty-active h3{
+    font-size: 1rem;
+}
+.empty-box h4{
+    font-size: 0.7rem;
+}
+.service-cart.empty-active .empty-box {
+  display: flex;
 }
 
 .right-box-top-total{
@@ -383,11 +411,4 @@
 .links-footer-container a{
     color: #747474;
     font-weight: 500;
-}
-.empty-box {
-  display: none;
-}
-
-.service-cart.empty-active .empty-box {
-  display: flex;
 }

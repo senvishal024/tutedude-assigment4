@@ -6,8 +6,9 @@
 let cart = {}; // selected services
 const currency = "₹";
 let serviceCart = document.querySelector(".service-cart");
+let emptyBox= document.querySelector(".empty-box");
 let buttons = document.querySelectorAll(".service-items button");
-
+let emptyBoxHidden= document.querySelector(".empty-box-hidden")
 function updateSerialNumbers() {
   let rows = document.querySelectorAll(".right-box-top-details");
 
@@ -23,10 +24,14 @@ function updateSerialNumbers() {
 //null value hone pr box design
 function nullBoxValue(){
     if(Object.keys(cart).length === 0){
-      serviceCart.classList.add("empty-active");
+      emptyBox.classList.add("empty-box");
+      emptyBoxHidden.classList.add("empty-active");
+      emptyBoxHidden.style.display="flex";
+
   }
   else{
-    serviceCart.classList.remove("empty-active");
+    emptyBox.classList.remove("empty-box");
+    emptyBoxHidden.style.display="none";
   }
 }
  nullBoxValue();
@@ -90,10 +95,10 @@ buttons.forEach((btn) => {
     // ADD ITEM
     else {
       cart[serviceName] = price;
-      if(Object.keys(cart).length===0){
+     /*  if(Object.keys(cart).length===0){
          serviceCart.classList.remove("empty-active")
       }
-     
+      */
       // create row
       let row = document.createElement("div");
       row.classList.add("right-box-top-details");
